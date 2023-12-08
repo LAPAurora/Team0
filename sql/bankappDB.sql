@@ -20,11 +20,11 @@ CREATE TABLE Account (
 
 -- 创建转账表
 CREATE TABLE Transfer (
-    TransferID INT PRIMARY KEY,
+    TransferID INT PRIMARY KEY  AUTO_INCREMENT,
     SenderAccountID INT,
     ReceiverAccountID INT,
     Amount DECIMAL(8, 2),
-    TransferDate DATE,
+    TransferDate DATETIME,
     FOREIGN KEY (SenderAccountID) REFERENCES Account(AccountID),
     FOREIGN KEY (ReceiverAccountID) REFERENCES Account(AccountID)
 );
