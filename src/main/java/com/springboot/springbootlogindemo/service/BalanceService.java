@@ -10,6 +10,6 @@ public interface BalanceService {
      * @param cardId 卡号
      * @return
      */
-    double checkService (String cardId);
+    Balance checkService (String cardId);
 
 }

@@ -11,14 +11,14 @@ public class BalanceServicelmpl implements BalanceService {
     private BalanceDao balanceDao;
 
     @Override
-    public double checkService(String cardId){
+    public Balance checkService(String cardId){
     Balance CurrentBalance=balanceDao.findByCardId(cardId);
     if (CurrentBalance!=null)
     {
-        return CurrentBalance.getBalance();
+        return CurrentBalance;
 
     }
-    return -1.0;
+    return null;
     }
 
 }

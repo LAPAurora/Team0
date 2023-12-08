@@ -9,7 +9,6 @@ public class Balance {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String cardId;
     // cardID 卡号
-    private String isReportLoss;
     // 是否挂失
     private double balance;
     //账户余额
@@ -26,13 +25,6 @@ public class Balance {
         this.cardId = cardId;
     }
 
-    public String getIsReportLoss() {
-        return isReportLoss;
-    }
-
-    public void setIsReportLoss(String isReportLoss) {
-        this.isReportLoss = isReportLoss;
-    }
 
     public double getBalance() {
         return balance;

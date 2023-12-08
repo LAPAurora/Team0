@@ -1,7 +1,9 @@
 package com.springboot.springbootlogindemo.controller;
 
 import com.springboot.springbootlogindemo.domain.Balance;
+import com.springboot.springbootlogindemo.repository.BalanceDao;
 import com.springboot.springbootlogindemo.service.BalanceService;
+import com.springboot.springbootlogindemo.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import com.springboot.springbootlogindemo.utils.Result;
 
@@ -14,13 +16,10 @@ public class BalanceController {
     private BalanceService balanceService;
 
     @PostMapping("/check")
-    public Result<Double> checkController(@RequestParam String cardId){
-        double money = balanceService.checkService(cardId);
-        if(money!=-1.0){
-            return Result.success(money,"余额如下:");
-        }else{
-            return Result.error("007","余额查询失败");
-        }
+    public Result<Balance> checkController(@RequestParam String cardId){
+        Balance balance = balanceService.checkService(cardId);
+        double money = balance.getBalance();
+        return Result.success(balance,"余额如下:");
     }
 
 
