@@ -1,5 +1,5 @@
 package com.springboot.springbootlogindemo.service.serviceImpl;
-
+import java.util.List;
 import com.springboot.springbootlogindemo.domain.Balance;
 import com.springboot.springbootlogindemo.repository.BalanceDao;
 import com.springboot.springbootlogindemo.service.BalanceService;
@@ -19,6 +19,14 @@ public class BalanceServicelmpl implements BalanceService {
 
     }
     return null;
+    }
+    @Override
+    public Balance bindService(Balance balance){
+        return balanceDao.save(balance);
+    }
+    @Override
+    public List<Balance> findcardsService(int uid){
+        return balanceDao.findByUid(uid);
     }
 
 }

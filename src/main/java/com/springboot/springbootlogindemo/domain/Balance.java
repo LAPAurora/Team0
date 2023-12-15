@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Entity
 public class Balance {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String cardId;
     // cardID 卡号
     // 是否挂失
